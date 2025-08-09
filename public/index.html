@@ -1,0 +1,346 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XTracking | Fast, Reliable Package Tracking</title>
+    <meta name="description" content="Track your packages in real-time with XTracking. Get instant ETA, live updates, and 24/7 customer support.">
+    <meta name="keywords" content="package tracking, delivery tracking, parcel tracking, courier tracking, XTracking, logistics, shipment tracking">
+    <meta name="author" content="XTracking Team">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="XTracking | Fast, Reliable Package Tracking">
+    <meta property="og:description" content="Track your packages in real-time with XTracking. Get instant ETA, live updates, and 24/7 customer support.">
+    <meta property="og:image" content="https://xtracking.org/non.png">
+    <meta property="og:url" content="https://xtracking.org">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XTracking | Fast, Reliable Package Tracking">
+    <meta name="twitter:description" content="Track your packages in real-time with XTracking. Get instant ETA, live updates, and 24/7 customer support.">
+    <meta name="twitter:image" content="https://xtracking.org/non.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="non.jpg">
+    <link rel="stylesheet" href="XTracking.css">
+</head>
+<header>
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/688a2b5382541d19280e7c98/1j1drigka';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<body>
+    <nav>
+            <div class="top-bar">
+        <div class="contactInfo">
+            <span>+237681523394</span> |
+             <span>info@xtracking.com</span>
+        </div>
+        <div class="socialLinks">
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+        <div class="logo">
+            <img src="Logo.png" alt="Logo" height="100">
+        </div>
+        <ul class="navLinks">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Prices</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+        <div class="quoteLink">
+            <a href="#">Get A Quote</a>
+        </div>
+        
+    </nav>
+</header>
+    <section id="hero">
+        <div class="heroContent">
+            <h2>Fast, Reliable & Smart Logistics</h2>
+            <p>Track your parcel in real time with XTracker.
+                Just enter your tracking number below
+            </p>
+            <form id="trackingForm" action="#">
+                <input type="text" id="trackingNumber" name="trackingNumber"
+                placeholder="Enter tracking Number" required/>
+                <button id="trackButton" type="submit">Track & Trace</button>
+            </form>
+            <div id="trackingResult" class="trackingResultBox"></div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="aboutContent">
+            <h2>About XTracking</h2>
+            <p>
+                 XTracking is a smart logistics and delivery solution built to
+            simplify tracking,shipping and parcel monitoring in real time.
+            We are committed to offering reliable,secure and fast delivery 
+            services tailored to individual and business needs world wide
+            </p>
+            <p>
+                Whether you are a small business owner or a large-scale supplier,
+            our innovative systems; including live delivery systems are designed to
+            help you stay in control,every step of the way.
+            </p>
+        </div>
+    </section>
+    <section id="quote">
+        <div class="quoteContent">
+            <h2>Request a Quote</h2>
+            <div class="note">
+                <p>
+                Need a custom delivery? Fill in your details and we will get back to 
+                you with a quote.
+            </p>
+            </div>
+            <form id="quoteForm">
+                <div class="formGroup">
+                    <label for="name">Full Name </label>
+                    <input type="text" id="name" name = "name" 
+                     placeholder="Enter your full name" required>
+                </div>
+                <div class="formGroup">
+                    <label for="email">Email </label>
+                    <input type="email" id="email" name="email" 
+                    placeholder="Enter your email" required>
+                </div>
+                <div class="formGroup">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" 
+                    placeholder="Enter your phone number" required>
+                </div>
+                <div class="formGroup">
+                    <label for="currentLocation">Current Location</label>
+                    <input type="text" id="currentLocation" name="currentLocation"
+                    placeholder="Where are you located" required>
+                </div>
+                <div class="formGroup">
+                    <label for="pickupLocation">Pickup Location</label>
+                    <input type="text" id="pickupLocation" name="pickupLocation"
+                    placeholder="Enter Pickup location" required>
+                </div>
+                <div class="formGroup">
+                    <label for="deliveryType">Delivery Type</label>
+                <select id="deliveryType" name="deliveryType" required>
+                    <option value="">
+                        --Select Delivery Type
+                    </option>
+                    <option value="standard">
+                        Standard Delivery
+                    </option>
+                    <option value="express">
+                        Express Delivery
+                    </option>
+                    <option value="Same Day">
+                        Same Day
+                    </option>
+                    <option value="overnight">
+                        Overnight
+                    </option>
+                </select>
+                </div>
+                <div class="formGroup">
+                    <label for="package">Package Details</label>
+                    <textarea id="package" name="package" 
+                    placeholder="Describe you package and delivery needs" rows="4" required></textarea>
+                </div>
+                <button id="quoteButton" class="submitButton" type="submit">Submit Request</button>
+                <div id="quoteSuccess" class="successMessage" style = "display:none;":></div>
+            </form>
+        </div>
+    </section>
+    <section id="services">
+        <div class="serviceContent">
+            <h2>What Sets Us Apart</h2>
+            <span>
+            <p>
+                We offer a wide range of delivery solutions tailored to your needs.
+                Here's what sets up apart:
+            </p>
+            </span>
+            <div class="serviceBox">
+                <div class="serviceItem">
+                    <img src="fast.png" alt="Fast Delivery">
+                    <h3>Fast Delivery</h3>
+                    <p>Get your packages delivered in record time with our optimised
+                        routes and local teams.
+                    </p>
+                </div>
+                <div class="serviceItem"> 
+                    <img src="gps.png" alt="Live Tracking">
+                    <h3>Live Tracking</h3>
+                    <p>
+                        Track your delivery in real time from pick up to drop off with
+                        our smart tracking sysyem.
+                    </p>
+                </div>
+                <div class="serviceItem">
+                    <img src="live.png" alt="Custumer Support">
+                    <h3>24/7 customer service</h3>
+                    <p>
+                        Our support team is available around the clock to help you with
+                        your questions and concerns.
+                    </p>
+                </div>
+                <div class="serviceItem">
+                    <img src="secure.png" alt="Secure">
+                    <h3>Safe & Secure</h3>
+                    <p>
+                        We treat your package like our own,with full care and guaranteed safety.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pricing">
+        <h2>Our Pricing</h2>
+        <div class="pricingContent">
+            <p>
+                Transparent and flexible pricing for every delivery need. Choose the plan that best 
+                fits you.
+            </p>
+        </div>
+            <div class="pricingBoxes">
+                <div class="pricingPlan">
+                    <h3>Basic</h3>
+                    <p class="price">$150</p>
+                    <ul>
+                        <li>Delivery in 2 to 3 days</li>
+                        <li>Basic tracking</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="choosePlan" id="basicPlanButton">Choose plan</button>
+                </div>
+                <div class="pricingPlan popular">
+                    <h3>Express</h3>
+                    <p class="price">$300</p>
+                    <ul>
+                        <li>Next Day Delivery</li>
+                        <li>Live GPS Tracking</li>
+                        <li>Phone and Email Support</li>
+                    </ul>
+                    <button class="choosePlan" id="expressPlanButton">Choose Plan</button>
+                </div>
+                <div class="pricingPlan">
+                    <h3>Premium</h3>
+                    <p class="price">$500</p>
+                    <ul>
+                        <li>Same Day delivery</li>
+                        <li>Live tracking with notifications</li>
+                        <li>24/7 live support</li>
+                    </ul>
+                    <button class="choosePlan" id="premiumPlanButton">Choose Plan</button>
+                </div>
+            </div>
+    </section>
+    <section class="testimonialSection">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonialSlider">
+            <div class="testimonialCard">
+                <p class="testimonialText">
+                    "XTracking has been a game changer for our logistics. Fast,reliable and
+                    real time updates. Highly recommended!"
+                </p>
+                <h4 class="clientName">Nuyebga Simeon</h4>
+                <p class="clientTitle">CEO Nav Markets</p>
+            </div>
+            <div class="testimonialCard">
+                <p class="testimonialText">
+                    "Customer sercice is top-notch. Even during off hours, they've responded
+                    with solutions and care."
+                </p>
+                <h4 class="clientName">Xenun M.</h4>
+                <p class="clientTitle">Vendor, starz</p>
+            </div>
+            <div class="testimonialCard">
+                <p class="testimonialText">
+                    "The live tracking is so accurate. I could literally follow my order around 
+                    town. Love it."
+                </p>
+                <h4 class="clientName">Plug G.</h4>
+                <p class="clientTitle">Small Business Owner</p>
+            </div>
+            <div class="testimonialCard">
+                <p class="testimonialText">
+                    "The customer service response speed as well as the live tracking
+                    was superb. My parcel arrived in perfect condition."
+                </p>
+                <h4 class="clientName">Old P.</h4>
+                <p class="clientTitle">Store Owner</p>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="stats">
+            <h2>Trusted by Hundreds</h2>
+            <p class="pricingContent">We are proud to deliver with excellence and build lasting partnerships</p>
+            <div class="statsBox">
+                <div class="statCard">
+                    <h3 class="statNumber">2,000+</h3>
+                    <p class="statLabel">Satisfied Clients</p>
+                </div>
+                <div class="statCard">
+                    <h3 class="statNumber">170+</h3>
+                    <p class="statLabel">Business Partners</p>
+                </div>
+                <div class="statCard">
+                    <h3 class="statNumber">15,000+</h3>
+                    <p class="statLabel">Parcels Delivered</p>
+                </div>
+                <div class="statCard">
+                    <h3 class="statNumber">24/7</h3>
+                    <p class="statLabel">Customer Support</p>
+                </div>
+            </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+<footer id="footer">
+    <div class="footerContent">
+        <div class="footerAbout">
+            <img src="Logo.png" alt="XTracking Logo">
+            <p>
+                Your reliable partner in smart,fast and secure
+                logistics across Cameroon and beyond. Track . Deliver . Trust.
+            </p>
+        </div>
+        <div class="footerLinks">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#quote">Request Quote</a></li>
+            </ul>
+        </div>
+        <div class="footerContact">
+            <h4>Contact Us</h4>
+            <p>Paila, Bali</p>
+            <p>+237 681523394</p>
+            <p>info@xtracking.com</p>
+        </div>
+        <div class="footerSocials">
+            <h4>Follow Us</h4>
+            <div class="SocialIcons">
+                <a href="#"><img src="fbb.png" alt="Facebook"></a>
+                <a href="#"><img src="insta.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <p>&copy;2025 XTracking. All rights reserved.</p>
+    </div>
+</footer>
