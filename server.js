@@ -39,8 +39,8 @@ app.get('/track', (req, res) => {
     });
 });
 
-// Fallback for SPA routing (send index.html for unknown routes)
-app.get('*', (req, res) => {
+// Fallback for SPA routing or unknown routes
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
