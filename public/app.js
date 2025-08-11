@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     resultBox.style.display = "block";
     resultBox.innerHTML = "🔍 Checking tracking info...";
     try{
-        const res = await fetch(`http://localhost:3000/track?number=${trackingNumber}`);
+        const res = await fetch(`/track?number=${trackingNumber}`);
+
         if(!res.ok) throw new Error("Tracking number is not found");
         const data = await res.json();
         setTimeout(()=>{
