@@ -20,6 +20,21 @@ header{
     font-size: 0.9rem;
     flex-wrap: wrap;
 }
+.top-bar {
+  background-color: #007BFF; /* Blue background */
+  color: white;              /* White text for contrast */
+  padding: 10px 20px;         /* Space inside the bar */
+  display: flex;              /* Lay out items in a row */
+  justify-content: space-between; /* Space items apart */
+  flex-wrap: wrap;            /* Allow wrapping on small screens */
+}
+
+
+.top-bar span {
+  margin-right: 15px;         /* Space between items */
+  font-size: 14px;            /* Smaller text */
+}
+
 header,nav{
     margin: 0;
     padding: 0;
