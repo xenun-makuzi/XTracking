@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     <h3>Hello, ${data.name}</h3>
   </div>
 
-  <p class="result-text">We've located your parcel in our system. Here are the current details:</p>
+  <p class="result-text">We've located your  parcel in our system. Here are the current details:</p>
 
   <div class="result-info">
+     <p><strong>Sender:</strong> ${data.sender}</p>
+    <p><strong>Weight:</strong> ${data.weight}</p>
     <p><strong>Status:</strong> <span class="status-badge ${data.status.toLowerCase().replace(" ", "-")}">${data.status}</span></p>
     <p><strong>ETA:</strong> ${data.eta}</p>
     <p><strong>📍 Current Location:</strong> <span class="location">${data.currentLocation}</span></p>
