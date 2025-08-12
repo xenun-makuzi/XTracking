@@ -27,6 +27,7 @@ header{
   display: flex;              /* Lay out items in a row */
   justify-content: space-between; /* Space items apart */
   flex-wrap: wrap;            /* Allow wrapping on small screens */
+  width: 100%:
 }
 
 
