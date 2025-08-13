@@ -634,7 +634,10 @@ nav ul li a:hover{
   background-color: #ffc107;
   color: #222;
 }
-
+.status-badge.on-hold {
+  background-color: #ffc107;
+  color: #222;
+}
 .status-badge.pending {
   background-color: #6c757d;
 }
