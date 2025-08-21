@@ -22,10 +22,10 @@
 "96397360976":{
         "name": "Steven Andrew",
         "sender":"John Moses",
-        "status": "on-Hold",
+        "status": "in-Transit",
          "weight": "0.06 kg",
          "destination": "P.O. Box 68 Mekoryuk Alaska 99630 (Tel 9078272104)",
-        "eta":"1 day 8 hours",
+        "eta":"1 day 7 hours",
         "currentLocation":"9414 Old Seward Hwy, Anchorage, AK 99515"
         
     },
