@@ -22,10 +22,10 @@
 "86479652694":{
         "name": "Ethan Ray Cook",
         "sender":"Mike Walker",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "0.07kg",
          "destination": "Address:6480 old mayfield rd Paducah ky (Tel: 6187713186)",
-        "eta":"28 minutes",
+        "eta":"10 minutes",
         "currentLocation":"En-Route"
 
     },
