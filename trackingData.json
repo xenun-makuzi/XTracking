@@ -47,10 +47,10 @@
 "583539555683":{
         "name": "Emil Amik",
         "sender":"Andre Dunny",
-        "status": "Pending",
+        "status": "in-Transit",
          "weight": "1/4 pounds ",
          "destination": "P.O box 37082 Toksook Bay 99637",
-        "eta":"24-48 hours",
+        "eta":"45 hours",
         "currentLocation":"331 Boniface Pkwy D, Anchorage, AK(Tel: 907 345 4113)"
         
     },
