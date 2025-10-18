@@ -19,6 +19,17 @@
         "currentLocation":"331 Boniface Pkwy D, Anchorage, AK(Tel: 907 345 4113)"
         
     },
+"58353908736383":{
+        "name": "Preston Edwards",
+        "sender":"Andre Dunny",
+        "status": "Pending",
+         "weight": "1 pound",
+         "destination": "P.O. Box 58 Marshall, AK 99585",
+        "eta":"24-48 hours",
+        "currentLocation":"331 Boniface Pkwy D, Anchorage, AK(Tel: 907 345 4113)"
+        
+    },
+
 
 "95807535884":{
         "name": "Stanley Hawk",
@@ -36,7 +47,7 @@
         "status": "in-Transit",
          "weight": "1 oz",
          "destination": "P.O box 6131 napaskiak ak 99559",
-        "eta":"37 hours",
+        "eta":"32 hours",
         "currentLocation":"En-Route via Air Freight"
         
     },
