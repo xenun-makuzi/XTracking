@@ -20,6 +20,18 @@
         
     },
 
+"5835875557795":{
+        "name": "Gabriel Yanez",
+        "sender":"Andre Dunny",
+        "status": "Pending",
+         "weight": "1/4 pounds ",
+         "destination": "P1819 Nolan road 1001 unit 19 pearsall Texas 78061(Tel: 830-317-0554)",
+        "eta":"24-48 hours",
+        "currentLocation":"331 Boniface Pkwy D, Anchorage, AK(Tel: 907 345 4113)"
+        
+    },
+
+
 "5835396668328":{
         "name": "Seth",
         "sender":"Andre Dunny",
@@ -106,7 +118,7 @@
         "status": "in-Transit",
          "weight": "1 oz",
          "destination": "P.O box 6131 napaskiak ak 99559",
-        "eta":"22 hours",
+        "eta":"20 hours",
         "currentLocation":"En-Route via Air Freight"
         
     },
