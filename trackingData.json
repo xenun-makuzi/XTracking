@@ -35,8 +35,7 @@
         "sender":"Andre Dunny",
         "status": "Pending",
          "weight": "1 pound",
-         "destination": "P.O  Box 5006
-Pilot Station, Ak 996590",
+         "destination": "P.O  Box 5006 Pilot Station, Ak 996590",
         "eta":"24-48 hours",
         "currentLocation":"331 Boniface Pkwy D, Anchorage, AK(Tel: 907 345 4113)"
         
@@ -70,7 +69,7 @@ Pilot Station, Ak 996590",
         "status": "in-Transit",
          "weight": "1 oz",
          "destination": "P.O box 6131 napaskiak ak 99559",
-        "eta":"32 hours",
+        "eta":"27 hours",
         "currentLocation":"En-Route via Air Freight"
         
     },
