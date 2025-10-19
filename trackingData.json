@@ -61,8 +61,8 @@
         "status": "in-Transit",
          "weight": "1/4 pounds ",
          "destination": "P.O box 37082 Toksook Bay 99637",
-        "eta":"45 hours",
-        "currentLocation":"331 Boniface Pkwy D, Anchorage, AK(Tel: 907 345 4113)"
+        "eta":"34 hours",
+        "currentLocation":"En-Route via Air Freight"
         
     },
 
@@ -129,7 +129,7 @@
         "status": "in-Transit",
          "weight": "1 oz",
          "destination": "P.O box 6131 napaskiak ak 99559",
-        "eta":"20 hours",
+        "eta":"15 hours",
         "currentLocation":"En-Route via Air Freight"
         
     },
