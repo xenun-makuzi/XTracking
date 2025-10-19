@@ -137,11 +137,11 @@
 "9583638926283":{
         "name": "Kayci Kaganak",
         "sender":"Mike Walker",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "1 oz",
          "destination": "P.O box 6131 napaskiak ak 99559",
-        "eta":"15 hours",
-        "currentLocation":"En-Route via Air Freight"
+        "eta":"10 hours",
+        "currentLocation":"Napaski Airport"
         
     },
 
