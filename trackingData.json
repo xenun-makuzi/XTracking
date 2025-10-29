@@ -12,10 +12,10 @@
 "583536087528":{
         "name": "Hank Aguchak",
         "sender":"Steven Vote",
-        "status": "Pending",
+        "status": "in-Transit",
          "weight": "2 oz",
          "destination": "P.O.Box 61 Scamming Bay, AK 99662",
-        "eta":"48 to 72 hours",
+        "eta": 71 hours",
         "currentLocation":"331 Boniface Pkwy D, Anchorage"
         
     },
