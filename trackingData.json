@@ -2,10 +2,10 @@
     "99230745501":{
         "name": "Antonio sage ",
         "sender":"Mike Walker",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "1 lb",
          "destination": "P o box 146 Point Hope, ak 99766 (Phone:907-368-12961)",
-        "eta":"6 hours",
+        "eta":"5 hours",
         "currentLocation":"En-Route"
         
     },
@@ -13,7 +13,7 @@
 "99232745601":{
         "name": "Veronica Lopez",
         "sender":"Mike Walker",
-        "status": "on-Hold",
+        "status": "Pending",
          "weight": "1 oz",
          "destination": "793 crescent ridge drive taylorsville ky 40071-12961)",
         "eta":"3 hours",
