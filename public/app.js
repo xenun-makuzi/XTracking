@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   <div class="result-info">
      <p><strong>Sender:</strong> ${data.sender}</p>
     <p><strong>Weight:</strong> ${data.weight}</p>
+    <p><strong>Package Nature:</strong> ${data.nature}</p>
     <p><strong>Status:</strong> <span class="status-badge ${data.status.toLowerCase().replace(" ", "-")}">${data.status}</span></p>
     <p><strong>ETA:</strong> ${data.eta}</p>
     <p><strong>📍 Current Location:</strong> <span class="location">${data.currentLocation}</span></p>
