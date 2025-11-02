@@ -68,10 +68,10 @@
 "7574678653528":{
         "name": "Annette Andrew",
         "sender":"Andrew Kendall",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "1 lb",
          "destination":"Post office box 44 Marshall Alaska 99585",
-        "eta":"21 hours",
+        "eta":"14 hours",
         "currentLocation":"En-Route via Air Freight"
         
     },
