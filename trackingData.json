@@ -28,7 +28,7 @@
          "weight": "3 vails",
           "nature":"Discrete Package",
          "destination": "91 Linwood ave Columbus Ohio 43205 (Tel: +14233674423)",
-        "eta":"47 hours",
+        "eta":"42 hours",
         "currentLocation":"Atlanta"
         
     },
@@ -71,7 +71,7 @@
         "status": "in-Transit",
          "weight": "1 lb",
          "destination":"Post office box 44 Marshall Alaska 99585",
-        "eta":"32 hours",
+        "eta":"28 hours",
         "currentLocation":"En-Route via Air Freight"
         
     },
