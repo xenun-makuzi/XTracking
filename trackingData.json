@@ -36,12 +36,12 @@
 "992309975501":{
         "name": "Antonio Valencia",
         "sender":"Nassa Labs",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "3 vails",
           "nature":"Discrete Package",
          "destination": "91 Linwood ave Columbus Ohio 43205 (Tel: +14233674423)",
-        "eta":"28 hours",
-        "currentLocation":"En-Route via Air Freight"
+        "eta":"15 hours",
+        "currentLocation":"Cleveland Airport"
         
     },
 
