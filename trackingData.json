@@ -102,11 +102,11 @@
 "7574678653528":{
         "name": "Annette Andrew",
         "sender":"Andrew Kendall",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "1 lb",
          "destination":"Post office box 44 Marshall Alaska 99585",
         "eta":"10 hours",
-        "currentLocation":"En-Route via Air Freight"
+        "currentLocation":"Bethel"
         
     },
 
@@ -135,11 +135,11 @@
 "4453963212528":{
         "name": "Nate Tom",
         "sender":"Kendell Andrew",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "16 oz",
          "destination": "P.O. Box 347 Chevak AK 99563",
-        "eta":"45 hours",
-        "currentLocation":"321 Boniface Pkwy D, Anchorage, AK"
+        "eta":"15 hours",
+        "currentLocation":"Bethel"
         
     },
 
