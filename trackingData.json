@@ -24,11 +24,11 @@
 "98407626061":{
         "name": "Daniel Viloria",
         "sender":"Nassa Labs",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "2 vails",
           "nature":"Discrete Package",
          "destination": "12030 scrub palm ln Orlando",
-        "eta":"38 hours",
+        "eta":"35 hours",
         "currentLocation":"En-Route"
 
     },
@@ -36,11 +36,11 @@
 "98407626062":{
         "name": "Daniel Viloria",
         "sender":"Nassa Labs",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "2 vails",
           "nature":"Discrete Package",
          "destination": "3625 cerrillos road, santa fe (NIM) 87507, New Mexico",
-        "eta":"38 hours",
+        "eta":"35 hours",
         "currentLocation":"En-Route"
 
     },
