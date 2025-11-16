@@ -13,11 +13,11 @@
 "9865887622528":{
         "name": "Brennan Lincoln",
         "sender":"Kendell Andrew",
-        "status": "Pending",
+        "status": "in-Transit",
          "nature":"Discrete Package",
          "weight": "2 oz",
          "destination": "P.O. Box 37021 toksook bay ak 99637",
-        "eta":"48-72 hours",
+        "eta":"68 hours",
         "currentLocation":"331 Boniface Pkwy D, Anchorage, AK"
 
     },
