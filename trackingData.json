@@ -24,11 +24,11 @@
 "9849736626061":{
         "name": "Isaac Clark",
         "sender":"Nassa Labs",
-        "status": "Pending",
+        "status": "in-Transit",
          "weight": "3 vails",
           "nature":"Discrete Package",
          "destination": "3516 Tierra Lorena El Paso, Tx 79938",
-        "eta":"48 to 72 hours",
+        "eta":"69 hours",
         "currentLocation":"Atlanta"
 
     },
