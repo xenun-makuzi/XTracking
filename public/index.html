@@ -1,345 +1,663 @@
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="neLwtLOiDzaRkPG2-MFNie6W9p2oVA_DzgNwfNAzw1Y" />
-    <title>XTracking | Fast, Reliable Package Tracking</title>
-    <meta name="description" content="Track your packages in real-time with XTracking. Get instant ETA, live updates, and 24/7 customer support.">
-    <meta name="keywords" content="package tracking, delivery tracking, parcel tracking, courier tracking, XTracking, logistics, shipment tracking">
-    <meta name="author" content="XTracking Team">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XTracking — Smart, Reliable Logistics</title>
+  <meta name="description" content="Track your packages in real-time with XTracking. Air, road & sea transport." />
+  <link rel="icon" href="Logo.png" />
 
-    <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:title" content="XTracking | Fast, Reliable Package Tracking">
-    <meta property="og:description" content="Track your packages in real-time with XTracking. Get instant ETA, live updates, and 24/7 customer support.">
-    <meta property="og:image" content="https://xtracking.org/non.png">
-    <meta property="og:url" content="https://xtracking.org">
-    <meta property="og:type" content="website">
+  <!-- Tailwind config & fonts -->
+  <script>
+    tailwind = {}; tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#0B63D8', accent:'#06B6D4', pagebg:'#F8FAFF', siteText:'#0F1724' },
+        keyframes: { float: {'0%':{transform:'translateY(0)'},'50%':{transform:'translateY(-8px)'},'100%':{transform:'translateY(0)'}} },
+        animation: { float: 'float 6s ease-in-out infinite' }
+      }}
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="XTracking | Fast, Reliable Package Tracking">
-    <meta name="twitter:description" content="Track your packages in real-time with XTracking. Get instant ETA, live updates, and 24/7 customer support.">
-    <meta name="twitter:image" content="https://xtracking.org/non.png">
+  <style>
+    :root{--max-w:1100px}
+    body{font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:#F8FAFF; color:#0F1724; -webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:'Poppins', 'Inter', sans-serif;}
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://xtracking.org/Logo.png">
-    <link rel="stylesheet" href="XTracking.css">
+    /* Hero background placeholder */
+    .hero { position:relative; background: url('hero-bg.jpg') center/cover no-repeat; color:white; overflow:hidden; }
+    .hero::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(6,27,77,0.48), rgba(6,27,77,0.22)); pointer-events:none; }
+
+    /* Rotator */
+    .text-grad { background: linear-gradient(90deg,#0B63D8 0%, #06B6D4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .rotator-fallback { color:#ffffff; } /* fallback if gradient isn't supported */
+
+    /* neon circle */
+    .neon-circle { width:90px; height:90px; border-radius:999px; display:grid; place-items:center;
+      background: radial-gradient(circle at 30% 30%, rgba(11,99,216,0.18), rgba(6,182,212,0.06));
+      box-shadow: 0 6px 18px rgba(11,99,216,0.18), 0 0 24px rgba(6,182,212,0.12) inset;
+      border: 2px solid rgba(11,99,216,0.2); position:relative;
+    }
+    .neon-circle::after { content:""; position:absolute; inset:-6px; border-radius:999px; filter: blur(8px); background: linear-gradient(90deg, rgba(11,99,216,0.2), rgba(6,182,212,0.12)); z-index:-1; }
+    .neon-value { font-weight:800; font-size:1.6rem; color:#0B63D8; text-shadow: 0 6px 22px rgba(11,99,216,0.18); }
+
+    /* reveal helper */
+    .reveal { opacity:0; transform: translateY(18px); transition: opacity 520ms ease, transform 520ms ease; will-change:opacity,transform; }
+    .reveal.is-visible { opacity:1; transform: translateY(0); }
+
+    /* tracking result card */
+    .tracking-card { background: rgba(255,255,255,0.98); color:#0F1724; border-radius:12px; box-shadow: 0 10px 30px rgba(15,23,36,0.08); padding:16px; }
+
+    /* Strong visible button styles */
+    button, .btn-visible {
+      transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+      will-change: transform, box-shadow, opacity;
+    }
+    /* Primary CTA (Track, Quote, Submit) */
+    #trackButton,
+    #quoteButton,
+    #contactSend,
+    button[type="submit"] {
+      background-color: #0B63D8 !important;
+      color: #fff !important;
+      border: none !important;
+      box-shadow: 0 10px 30px rgba(11,99,216,0.18);
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    #trackButton:hover,
+    #quoteButton:hover,
+    #contactSend:hover,
+    button[type="submit"]:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(11,99,216,0.22);
+    }
+    .bg-gradient-to-r { color: #fff !important; }
+
+    /* Chat CTA next to track */
+    .inline-chat-btn {
+      display: inline-grid;
+      grid-auto-flow: column;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 22px rgba(2,6,23,0.15);
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .inline-chat-btn:hover { transform: translateY(-3px); background: rgba(255,255,255,0.16); }
+    .inline-chat-btn svg { width:18px; height:18px; display:block; }
+
+    /* input visible color */
+    .hero-input { color:#0b1724 !important; }
+    ::placeholder { color: rgba(15,23,36,0.45); }
+
+    /* Swiper small overrides */
+    .swiper{padding-bottom: 24px}
+    .swiper-button-prev, .swiper-button-next { color: #0B63D8; }
+    .swiper-pagination-bullet-active { background: #0B63D8; }
+
+    /* accessibility helper */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
-<header>
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function(){
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/688a2b5382541d19280e7c98/1j1drigka';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-<body>
-    <nav>
-            <div class="top-bar">
-        <div class="contactInfo">
-             <span>support@xtracking.org</span>
-        </div>
-        <div class="socialLinks">
-            <a href="#">Facebook</a> |
-            <a href="#">Twitter</a> |
-            <a href="#">Instagram</a>
-        </div>
-    </div>
-        <div class="logo">
-            <img src="Logo.png" alt="Logo" height="100" width="350">
-        </div>
-        <ul class="navLinks">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Prices</a></li>
-            <li><a href="#footer">Contact</a></li>
-        </ul>
-        <div class="quoteLink">
-            <a href="#quote">Get A Quote</a>
-        </div>
-        
-    </nav>
-</header>
-    <section id="hero">
-        <div class="heroContent">
-            <h2>Fast, Reliable & Smart Logistics</h2>
-            <p>Track your parcel in real time with XTracker.
-                Just enter your tracking number below
-            </p>
-            <form id="trackingForm" action="#">
-                <input type="text" id="trackingNumber" name="trackingNumber"
-                placeholder="Enter tracking Number" required/>
-                <button id="trackButton" type="submit">Track & Trace</button>
-            </form>
-            <div id="trackingResult" class="trackingResultBox"></div>
-        </div>
-    </section>
-    <section class="about" id="about">
-        <div class="aboutContent">
-            <h2>About XTracking</h2>
-            <p>
-                 XTracking is a smart logistics and delivery solution built to
-            simplify tracking,shipping and parcel monitoring in real time.
-            We are committed to offering reliable,secure and fast delivery 
-            services tailored to individual and business needs world wide
-            </p>
-            <p>
-                Whether you are a small business owner or a large-scale supplier,
-            our innovative systems; including live delivery systems are designed to
-            help you stay in control,every step of the way.
-            </p>
-        </div>
-    </section>
-    <section id="quote">
-        <div class="quoteContent">
-            <h2>Request a Quote</h2>
-            <div class="note">
-                <p>
-                Need a custom delivery? Fill in your details and we will get back to 
-                you with a quote.
-            </p>
-            </div>
-            <form id="quoteForm">
-                <div class="formGroup">
-                    <label for="name">Full Name </label>
-                    <input type="text" id="name" name = "name" 
-                     placeholder="Enter your full name" required>
-                </div>
-                <div class="formGroup">
-                    <label for="email">Email </label>
-                    <input type="email" id="email" name="email" 
-                    placeholder="Enter your email" required>
-                </div>
-                <div class="formGroup">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" 
-                    placeholder="Enter your phone number" required>
-                </div>
-                <div class="formGroup">
-                    <label for="currentLocation">Current Location</label>
-                    <input type="text" id="currentLocation" name="currentLocation"
-                    placeholder="Where are you located" required>
-                </div>
-                <div class="formGroup">
-                    <label for="pickupLocation">Pickup Location</label>
-                    <input type="text" id="pickupLocation" name="pickupLocation"
-                    placeholder="Enter Pickup location" required>
-                </div>
-                <div class="formGroup">
-                    <label for="deliveryType">Delivery Type</label>
-                <select id="deliveryType" name="deliveryType" required>
-                    <option value="">
-                        --Select Delivery Type
-                    </option>
-                    <option value="standard">
-                        Standard Delivery
-                    </option>
-                    <option value="express">
-                        Express Delivery
-                    </option>
-                    <option value="Same Day">
-                        Same Day
-                    </option>
-                    <option value="overnight">
-                        Overnight
-                    </option>
-                </select>
-                </div>
-                <div class="formGroup">
-                    <label for="package">Package Details</label>
-                    <textarea id="package" name="package" 
-                    placeholder="Describe you package and delivery needs" rows="4" required></textarea>
-                </div>
-                <button id="quoteButton" class="submitButton" type="submit">Submit Request</button>
-                <div id="quoteSuccess" class="successMessage" style = "display:none;":></div>
-            </form>
-        </div>
-    </section>
-    <section id="services">
-        <div class="serviceContent">
-            <h2>What Sets Us Apart</h2>
-            <span>
-            <p>
-                We offer a wide range of delivery solutions tailored to your needs.
-                Here's what sets up apart:
-            </p>
-            </span>
-            <div class="serviceBox">
-                <div class="serviceItem">
-                    <img src="fast.png" alt="Fast Delivery">
-                    <h3>Fast Delivery</h3>
-                    <p>Get your packages delivered in record time with our optimised
-                        routes and local teams.
-                    </p>
-                </div>
-                <div class="serviceItem"> 
-                    <img src="gps.png" alt="Live Tracking">
-                    <h3>Live Tracking</h3>
-                    <p>
-                        Track your delivery in real time from pick up to drop off with
-                        our smart tracking sysyem.
-                    </p>
-                </div>
-                <div class="serviceItem">
-                    <img src="live.png" alt="Custumer Support">
-                    <h3>24/7 customer service</h3>
-                    <p>
-                        Our support team is available around the clock to help you with
-                        your questions and concerns.
-                    </p>
-                </div>
-                <div class="serviceItem">
-                    <img src="secure.png" alt="Secure">
-                    <h3>Safe & Secure</h3>
-                    <p>
-                        We treat your package like our own,with full care and guaranteed safety.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="pricing">
-        <h2>Our Pricing</h2>
-        <div class="pricingContent">
-            <p>
-                Transparent and flexible pricing for every delivery need. Choose the plan that best 
-                fits you.
-            </p>
-        </div>
-            <div class="pricingBoxes">
-                <div class="pricingPlan">
-                    <h3>Basic</h3>
-                    <p class="price">$150</p>
-                    <ul>
-                        <li>Delivery in 2 to 3 days</li>
-                        <li>Basic tracking</li>
-                        <li>Email support</li>
-                    </ul>
-                    <button class="choosePlan" id="basicPlanButton">Choose plan</button>
-                </div>
-                <div class="pricingPlan popular">
-                    <h3>Express</h3>
-                    <p class="price">$300</p>
-                    <ul>
-                        <li>Next Day Delivery</li>
-                        <li>Live GPS Tracking</li>
-                        <li>Phone and Email Support</li>
-                    </ul>
-                    <button class="choosePlan" id="expressPlanButton">Choose Plan</button>
-                </div>
-                <div class="pricingPlan">
-                    <h3>Premium</h3>
-                    <p class="price">$500</p>
-                    <ul>
-                        <li>Same Day delivery</li>
-                        <li>Live tracking with notifications</li>
-                        <li>24/7 live support</li>
-                    </ul>
-                    <button class="choosePlan" id="premiumPlanButton">Choose Plan</button>
-                </div>
-            </div>
-    </section>
-    <section class="testimonialSection">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonialSlider">
-            <div class="testimonialCard">
-                <p class="testimonialText">
-                    "XTracking has been a game changer for our logistics. Fast,reliable and
-                    real time updates. Highly recommended!"
-                </p>
-                <h4 class="clientName">Jessica P.</h4>
-                <p class="clientTitle">CEO Nav Markets</p>
-            </div>
-            <div class="testimonialCard">
-                <p class="testimonialText">
-                    "Customer sercice is top-notch. Even during off hours, they've responded
-                    with solutions and care."
-                </p>
-                <h4 class="clientName">Jase M.</h4>
-                <p class="clientTitle">Vendor, starz</p>
-            </div>
-            <div class="testimonialCard">
-                <p class="testimonialText">
-                    "The live tracking is so accurate. I could literally follow my order around 
-                    town. Love it."
-                </p>
-                <h4 class="clientName">Punti G.</h4>
-                <p class="clientTitle">Small Business Owner</p>
-            </div>
-            <div class="testimonialCard">
-                <p class="testimonialText">
-                    "The customer service response speed as well as the live tracking
-                    was superb. My parcel arrived in perfect condition."
-                </p>
-                <h4 class="clientName">Audre P.</h4>
-                <p class="clientTitle">Store Owner</p>
-            </div>
-        </div>
-    </section>
- 
-    <section class="stats">
-            <h2>Trusted by Hundreds</h2>
-            <p class="pricingContent">We are proud to deliver with excellence and build lasting partnerships</p>
-            <div class="statsBox">
-                <div class="statCard">
-                    <h3 class="statNumber">2,000+</h3>
-                    <p class="statLabel">Satisfied Clients</p>
-                </div>
-                <div class="statCard">
-                    <h3 class="statNumber">170+</h3>
-                    <p class="statLabel">Business Partners</p>
-                </div>
-                <div class="statCard">
-                    <h3 class="statNumber">15,000+</h3>
-                    <p class="statLabel">Parcels Delivered</p>
-                </div>
-                <div class="statCard">
-                    <h3 class="statNumber">24/7</h3>
-                    <p class="statLabel">Customer Support</p>
-                </div>
-            </div>
-    </section>
-    <script src="app.js"></script>
-</body>
 
-<footer id="footer">
-    <div class="footerContent">
-        <div class="footerAbout">
-            <img src="Logo.png" alt="XTracking Logo">
-            <p>
-                Your reliable partner in smart,fast and secure
-                logistics across Alaska and beyond. Track . Deliver . Trust.
-            </p>
+<body class="antialiased">
+
+  <!-- top bar -->
+  <div class="bg-primary text-white">
+    <div class="max-w-[var(--max-w)] mx-auto px-6 py-2 flex justify-between items-center text-sm">
+      <div>📧 <a href="mailto:support@xtracking.org" class="underline">support@xtracking.org</a></div>
+      <div class="flex gap-4"><a href="#" class="hover:underline">Facebook</a><a href="#" class="hover:underline">Twitter</a></div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="fixed w-full top-0 left-0 z-50">
+    <div class="backdrop-blur-md bg-white/60">
+      <div class="max-w-[var(--max-w)] mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3" aria-label="XTracking home">
+          <img src="Logo.png" alt="XTracking logo" class="h-10 w-auto">
+          <span class="font-semibold text-lg">XTracking</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+          <a href="#hero" class="text-sm hover:text-primary transition">Home</a>
+          <a href="#services" class="text-sm hover:text-primary transition">Services</a>
+          <a href="#process" class="text-sm hover:text-primary transition">Process</a>
+          <a href="#quote" class="text-sm hover:text-primary transition">Request Quote</a>
+          <a href="#reviews" class="text-sm hover:text-primary transition">Reviews</a>
+          <a href="#contact" id="contactOpen" class="text-sm hover:text-primary transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a href="#quote" class="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-semibold shadow transition">Get a Quote</a>
+          <button id="navToggle" class="md:hidden p-2 rounded-md" aria-label="Open menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
         </div>
-        <div class="footerLinks">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#quote">Request Quote</a></li>
-            </ul>
+      </div>
+
+      <div id="mobileMenu" class="md:hidden hidden px-6 pb-6">
+        <div class="flex flex-col gap-2">
+          <a href="#hero" class="py-2">Home</a>
+          <a href="#services" class="py-2">Services</a>
+          <a href="#process" class="py-2">Process</a>
+          <a href="#quote" class="py-2">Request Quote</a>
+          <a href="#reviews" class="py-2">Reviews</a>
+          <a href="#contact" id="contactOpenMobile" class="py-2">Contact</a>
         </div>
-        <div class="footerContact">
-            <h4>Contact Us</h4>
-            <p>Alaska,Anchorage</p>
-            <p>info@xtracking.com</p>
-        </div>
-        <div class="footerSocials">
-            <h4>Follow Us</h4>
-            <div class="SocialIcons">
-                <a href="#"><img src="fbb.png" alt="Facebook"></a>
-                <a href="#"><img src="insta.png" alt="Instagram"></a>
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" class="pt-28">
+
+    <!-- HERO -->
+    <section id="hero" class="hero py-20">
+      <div class="max-w-[var(--max-w)] mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-6">
+            <p class="uppercase text-sm font-semibold text-primary">Smart Logistics</p>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+              <span id="heroPrefix" class="block">We provide</span>
+              <span class="block mt-2">
+                <span id="rotatingWords" class="text-grad">Fast, reliable delivery</span>
+              </span>
+            </h1>
+
+            <p class="text-white/85 max-w-xl">Track your parcels in real-time with instant ETA, live updates and 24/7 support across air, road and sea transport.</p>
+
+            <div class="flex gap-4 items-center flex-wrap">
+              <!-- tracking form -->
+              <form id="trackingForm" class="flex gap-3 w-full md:w-auto reveal" aria-label="Track parcel">
+                <label for="trackingNumber" class="sr-only">Tracking number</label>
+                <input id="trackingNumber" name="trackingNumber" required
+                       class="px-4 py-3 rounded-lg border border-white/20 bg-white/8 hero-input placeholder:text-slate-700 w-full md:w-[320px]"
+                       placeholder="Enter tracking number (e.g. XTR-12345)" autocomplete="off" />
+                <div class="flex items-center gap-2">
+                  <button id="trackButton" type="submit" class="px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-semibold">Track</button>
+
+                  <!-- Inline chat CTA -->
+                  <button id="inlineChatBtn" type="button" class="inline-chat-btn" aria-label="Open chat with support">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden>
+                      <path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Chat</span>
+                  </button>
+                </div>
+              </form>
+
+              <!-- neon counter -->
+              <div class="flex flex-col items-center ml-2 reveal">
+                <div class="neon-circle">
+                  <div class="neon-value" id="inTransitCount">25</div>
+                </div>
+                <div class="text-sm text-white/90 mt-2">Packages in transit</div>
+              </div>
             </div>
+
+            <!-- tracking result -->
+            <div id="trackingResult" class="mt-6"></div>
+          </div>
+
+          <!-- right column intentionally empty (preview image removed) -->
+          <div aria-hidden></div>
         </div>
+      </div>
+
+      <!-- decorative blob -->
+      <div aria-hidden class="absolute right-0 top-0 w-80 h-80 rounded-full" style="background:linear-gradient(135deg,#06B6D4,#0B63D8); filter: blur(64px); opacity:0.16; transform: translate(30%, -20%);"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-14">
+      <div class="max-w-[var(--max-w)] mx-auto px-6 text-center reveal">
+        <p class="text-sm font-semibold uppercase text-primary tracking-wide">Shipping to everywhere</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Our Shipping Services</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto mt-2">Flexible transport options to fit your needs.</p>
+      </div>
+
+      <div class="max-w-[var(--max-w)] mx-auto px-6 mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-2xl shadow p-4 reveal">
+          <img src="air.jpg" alt="Air transport" class="w-full h-40 object-cover rounded-lg mb-4">
+          <h3 class="font-semibold text-xl mb-2">Air Transport</h3>
+          <p class="text-slate-600 mb-2">Fast international shipments with priority handling and tracking.</p>
+          <p class="text-sm text-slate-500">Great for urgent parcels and lightweight cargo.</p>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow p-4 reveal">
+          <img src="road.jpg" alt="Road transport" class="w-full h-40 object-cover rounded-lg mb-4">
+          <h3 class="font-semibold text-xl mb-2">Road Transport</h3>
+          <p class="text-slate-600 mb-2">Reliable ground shipping for regional and cross-country routes.</p>
+          <p class="text-sm text-slate-500">Perfect for heavier parcels and scheduled deliveries.</p>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow p-4 reveal">
+          <img src="sea.jpg" alt="Sea transport" class="w-full h-40 object-cover rounded-lg mb-4">
+          <h3 class="font-semibold text-xl mb-2">Sea Transport</h3>
+          <p class="text-slate-600 mb-2">Cost-effective ocean freight for large shipments and containers.</p>
+          <p class="text-sm text-slate-500">Best for bulk non-urgent cargo with tracking and ETA.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-14 bg-slate-50">
+      <div class="max-w-[var(--max-w)] mx-auto px-6 text-center reveal">
+        <p class="text-sm font-semibold uppercase text-primary tracking-wide">Our Process</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Packed & Ready to Leave the Warehouse</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto mt-2">Hover to zoom — your shipments are carefully packaged and inspected before dispatch.</p>
+      </div>
+
+      <div class="max-w-[var(--max-w)] mx-auto px-6 mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
+        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process1.jpg" alt="Packing team preparing shipment" class="w-full h-40 object-cover"></figure>
+        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process2.jpg" alt="Scales and labelling" class="w-full h-40 object-cover"></figure>
+        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process3.jpg" alt="Boxes on pallets" class="w-full h-40 object-cover"></figure>
+        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process4.jpg" alt="Truck loading" class="w-full h-40 object-cover"></figure>
+        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process5.jpg" alt="Final inspection" class="w-full h-40 object-cover"></figure>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section id="quote" class="py-14">
+      <div class="max-w-[var(--max-w)] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="reveal">
+          <h2 class="text-3xl md:text-4xl font-extrabold">Request a Quote</h2>
+          <p class="text-slate-600 mt-2">Tell us about your shipment and we'll respond with a custom quote.</p>
+
+          <div class="mt-6 bg-white rounded-2xl p-6 shadow">
+            <form id="quoteForm" class="grid gap-3">
+              <input id="q_name" name="name" required placeholder="Full name" class="p-3 border rounded-lg" />
+              <input id="q_email" type="email" name="email" required placeholder="Email" class="p-3 border rounded-lg" />
+              <input id="q_phone" name="phone" placeholder="Phone (optional)" class="p-3 border rounded-lg" />
+              <input id="q_pickup" name="pickup" required placeholder="Pickup location" class="p-3 border rounded-lg" />
+              <input id="q_delivery" name="delivery" required placeholder="Delivery location" class="p-3 border rounded-lg" />
+              <textarea id="q_package" name="package" rows="4" placeholder="Describe package & requirements" class="p-3 border rounded-lg"></textarea>
+
+              <button id="quoteButton" type="submit" class="mt-2 px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-semibold">Submit Request</button>
+              <div id="quoteSuccess" class="successMessage hidden text-green-600 font-semibold mt-3"></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-xl font-semibold">Why XTracking?</h3>
+          <ul class="mt-3 space-y-3 text-slate-600">
+            <li>✓ Real-time tracking and notifications</li>
+            <li>✓ Multiple transport modes (air, road, sea)</li>
+            <li>✓ Secure handling and insured shipments</li>
+            <li>✓ 24/7 support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS carousel (new) -->
+    <section id="reviews" class="max-w-[var(--max-w)] mx-auto px-6 py-16">
+      <div class="text-center mb-8">
+        <p class="text-sm font-semibold uppercase text-primary tracking-wide">Reviews</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-2">What our clients say</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto mt-2">Real feedback from customers using our tracking and delivery services.</p>
+      </div>
+
+      <div class="swiper myReviews">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bg-white rounded-2xl p-6 shadow">
+            <p class="text-slate-700 italic">"XTracking made logistics simple — great tracking and fast delivery."</p>
+            <div class="flex items-center gap-3 mt-4">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jessica P." class="w-12 h-12 rounded-full object-cover">
+              <div><div class="font-semibold">Jessica P.</div><div class="text-sm text-slate-500">Retailer</div></div>
+            </div>
+          </div>
+
+          <div class="swiper-slide bg-white rounded-2xl p-6 shadow">
+            <p class="text-slate-700 italic">"Excellent support and live updates — highly recommended."</p>
+            <div class="flex items-center gap-3 mt-4">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark D." class="w-12 h-12 rounded-full object-cover">
+              <div><div class="font-semibold">Mark D.</div><div class="text-sm text-slate-500">Vendor</div></div>
+            </div>
+          </div>
+
+          <div class="swiper-slide bg-white rounded-2xl p-6 shadow">
+            <p class="text-slate-700 italic">"Accurate ETA and top-notch service — my go-to for deliveries."</p>
+            <div class="flex items-center gap-3 mt-4">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Aisha K." class="w-12 h-12 rounded-full object-cover">
+              <div><div class="font-semibold">Aisha K.</div><div class="text-sm text-slate-500">Founder</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination mt-6"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-12 bg-slate-50">
+      <div class="max-w-[var(--max-w)] mx-auto px-6 reveal">
+        <div class="bg-white rounded-2xl p-6 shadow">
+          <h3 class="text-xl font-semibold mb-3">Contact Us</h3>
+          <form id="contactForm" action="https://formspree.io/f/mpwyzllj" method="POST" class="grid gap-3">
+            <input name="name" required placeholder="Your name" class="p-3 border rounded-lg" />
+            <input name="_replyto" type="email" required placeholder="Email address" class="p-3 border rounded-lg" />
+            <textarea name="message" rows="4" required placeholder="Message" class="p-3 border rounded-lg"></textarea>
+            <button id="contactSend" type="submit" class="px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-semibold">Send Message</button>
+            <p id="contactSuccess" class="hidden text-green-600">✅ Your message has been sent successfully!</p>
+            <p id="contactError" class="hidden text-red-600">❌ Oops! Something went wrong. Try again.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-[#060617] text-white py-10">
+    <div class="max-w-[var(--max-w)] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div><img src="Logo.png" alt="XTracking" class="h-10 mb-3"><p class="text-slate-400 max-w-sm">Smart logistics, real-time tracking and dependable delivery across air, road and sea.</p></div>
+      <div><h4 class="font-semibold mb-3">Company</h4><ul class="space-y-2 text-slate-400"><li><a href="#services" class="hover:text-white">Services</a></li><li><a href="#process" class="hover:text-white">Process</a></li><li><a href="#quote" class="hover:text-white">Request Quote</a></li></ul></div>
+      <div><h4 class="font-semibold mb-3">Contact</h4><p class="text-slate-400">Anchorage, Alaska</p><p class="text-slate-400 mt-1">info@xtracking.org</p><div class="mt-4 flex gap-3"><a id="footerChat" href="#" class="p-2 bg-white/10 rounded">Chat</a></div></div>
     </div>
-    <div class="footerBottom">
-        <p>&copy;2025 XTracking. All rights reserved.</p>
-    </div>
-</footer>
+    <div class="text-center text-slate-500 mt-8">&copy; 2025 XTracking. All rights reserved.</div>
+  </footer>
+
+  <!-- Tawk.to script (user-provided) -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/688a2b5382541d19280e7c98/1j1drigka';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  <!-- Swiper CSS/JS for reviews -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- APP JS: rotating words (exact logic), tracking, chat opener, small helpers -->
+  <script>
+  // ---------- NAV toggle ----------
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(navToggle && mobileMenu){
+    navToggle.addEventListener('click', (e) => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      e.stopPropagation();
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', ()=>{
+      mobileMenu.classList.add('hidden'); navToggle.setAttribute('aria-expanded','false');
+    }));
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        mobileMenu.classList.add('hidden'); navToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // ---------- REVEAL (intersection) ----------
+  (function setupReveal(){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('is-visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  })();
+
+  // ---------- ROTATING WORDS (EXACT logic supplied by you, with logistics phrases) ----------
+  const words = [
+    'Fast, reliable delivery',
+    'Real-time tracking & ETA',
+    'Worldwide air, road & sea',
+    '24/7 customer support'
+  ];
+  let i = 0;
+  const el = document.getElementById('rotatingWords');
+  setInterval(() => {
+    i = (i + 1) % words.length;
+    el.classList.remove('opacity-100');
+    el.classList.add('opacity-0');
+    setTimeout(() => {
+      el.textContent = words[i];
+      el.classList.remove('opacity-0');
+      el.classList.add('opacity-100');
+    }, 200);
+  }, 3000);
+  el.classList.add('transition-opacity', 'duration-300', 'opacity-100');
+
+  // ---------- SWIPER init for Reviews ----------
+  const reviewsSwiper = new Swiper('.myReviews', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: { delay: 4500, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+  });
+
+  // ---------- Tracking logic (tries /track then fallback to tracking Data.json) ----------
+  (function initTracking(){
+    const form = document.getElementById('trackingForm');
+    const resultBox = document.getElementById('trackingResult');
+    if(!form || !resultBox) return;
+    resultBox.innerHTML = ''; resultBox.style.display = 'block';
+
+    async function fetchTrackingFromJson(trackingNumber){
+      const candidates = ['/tracking Data.json','/trackingData.json','/tracking-data.json'];
+      for(const path of candidates){
+        try{
+          const r = await fetch(path, {cache:'no-store'});
+          if(!r.ok) continue;
+          const json = await r.json();
+          if(Array.isArray(json)){
+            const found = json.find(item => item && (item.number==trackingNumber || item.trackingNumber==trackingNumber));
+            if(found) return found;
+          } else if (typeof json === 'object' && json !== null){
+            if(json[trackingNumber]) return json[trackingNumber];
+            if(Array.isArray(json.items)){
+              const found = json.items.find(it => it.number==trackingNumber || it.trackingNumber==trackingNumber);
+              if(found) return found;
+            }
+          }
+        } catch(err){}
+      }
+      return null;
+    }
+
+    function escapeHtml(s){ if(typeof s!=='string') return s; return s.replace(/[&<>"'`=\/]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','`':'&#96;','/':'&#47;','=':'&#61;'})[ch]); }
+
+    function renderTrackingResult(data, container){
+      const name = escapeHtml(data.name || data.recipient || 'Customer');
+      const sender = escapeHtml(data.sender || data.from || 'Unknown');
+      const weight = escapeHtml(data.weight || data.weight_kg || 'N/A');
+      const nature = escapeHtml(data.nature || data.package || 'N/A');
+      const status = escapeHtml(data.status || 'Pending');
+      const statusClass = status.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9\-_]/g,'');
+      const eta = escapeHtml(data.eta || data.estimated || 'TBD');
+      const currentLocation = escapeHtml(data.currentLocation || data.location || 'Unknown');
+      const destination = escapeHtml(data.destination || data.to || 'Unknown');
+
+      let timelineHtml = '';
+      const events = data.events || data.checkpoints || null;
+      if(Array.isArray(events) && events.length){
+        timelineHtml = '<div class="timeline mt-4">';
+        events.slice().reverse().forEach(ev => {
+          const t = escapeHtml(ev.time || ev.timestamp || ev.date || '');
+          const msg = escapeHtml(ev.status || ev.message || ev.note || '');
+          timelineHtml += `<div class="evt"><div class="text-sm font-semibold">${msg}</div><div class="text-sm text-slate-500">${t}</div></div>`;
+        });
+        timelineHtml += '</div>';
+      }
+
+      container.innerHTML = `
+        <div class="tracking-card">
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <span style="background:#28a745;color:#fff;padding:8px;border-radius:999px;font-weight:700">✔</span>
+              <div><div class="text-sm text-slate-500">Hello</div><div class="font-semibold">${name}</div></div>
+            </div>
+            <div class="text-sm text-slate-500">ETA: <span class="font-semibold">${eta}</span></div>
+          </div>
+
+          <div class="mt-4 text-sm text-slate-700 space-y-1">
+            <div><strong>Sender:</strong> ${sender}</div>
+            <div><strong>Weight:</strong> ${weight}</div>
+            <div><strong>Package Nature:</strong> ${nature}</div>
+            <div><strong>Status:</strong> <span class="status-badge ${statusClass}">${status}</span></div>
+            <div><strong>Current Location:</strong> <span class="text-primary">${currentLocation}</span></div>
+            <div><strong>Destination:</strong> ${destination}</div>
+          </div>
+
+          ${timelineHtml}
+
+          <div class="mt-4 flex gap-3">
+            <a href="map.html" target="_blank" rel="noopener" class="px-3 py-2 rounded bg-gradient-to-r from-primary to-accent text-white">Track on map</a>
+            <a href="#" id="contactSupportInline" class="px-3 py-2 rounded bg-white text-gray-800">Contact support</a>
+          </div>
+        </div>
+      `;
+
+      // attach Tawk opener for inline contact
+      const inline = document.getElementById('contactSupportInline');
+      if(inline) inline.addEventListener('click', (e)=>{ e.preventDefault(); openTawkNow(); });
+    }
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const input = document.getElementById('trackingNumber');
+      if(!input) return;
+      const tn = input.value.trim();
+      if(!tn){ resultBox.innerHTML = '<div class="tracking-card text-red-600">❗ Please enter a tracking number.</div>'; return; }
+
+      resultBox.innerHTML = '<div class="tracking-card"><div style="height:12px;width:120px;background:#eef2ff;border-radius:6px;margin-bottom:8px"></div><div style="height:10px;width:80%;background:#f1f5f9;border-radius:6px;margin-bottom:6px"></div><div style="height:10px;width:60%;background:#f1f5f9;border-radius:6px"></div></div>';
+
+      // try API
+      try{
+        const apiResp = await fetch('/track?number='+encodeURIComponent(tn));
+        if(apiResp.ok){
+          const data = await apiResp.json();
+          renderTrackingResult(data, resultBox);
+          return;
+        }
+      } catch(err){ /* fallthrough to JSON fallback */ }
+
+      const fallback = await fetchTrackingFromJson(tn);
+      if(fallback){ renderTrackingResult(fallback, resultBox); return; }
+
+      resultBox.innerHTML = '<div class="tracking-card text-red-600">❌ Tracking number not found. Please check and try again or contact support.</div>';
+    });
+
+  })(); // initTracking
+
+  // ---------- QUOTE form ----------
+  (function initQuote(){
+    const qForm = document.getElementById('quoteForm'), qSuccess = document.getElementById('quoteSuccess');
+    if(!qForm) return;
+    qForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const id = 'XTR-' + Math.random().toString(36).substring(2,8).toUpperCase();
+      if(qSuccess){ qSuccess.innerHTML = `✅ Quote created. Reference ID: <strong>${id}</strong>. We'll email you soon.`; qSuccess.classList.remove('hidden'); }
+      qForm.reset();
+      setTimeout(()=>{ if(qSuccess) qSuccess.classList.add('hidden'); }, 8000);
+    });
+  })();
+
+  // ---------- CONTACT form (Formspree) ----------
+  (function initContact(){
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('contactSuccess'), error = document.getElementById('contactError');
+    if(!form) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const data = new FormData(form);
+      try{
+        const res = await fetch(form.action, { method: form.method, body: data, headers: { 'Accept':'application/json' } });
+        if(res.ok){ if(success){ success.classList.remove('hidden'); setTimeout(()=>success.classList.add('hidden'),5000);} form.reset(); }
+        else throw new Error('Network error');
+      } catch(err){ if(error){ error.classList.remove('hidden'); setTimeout(()=>error.classList.add('hidden'),5000); } }
+    });
+  })();
+
+  // ---------- TAWK opener: poll for API and call toggle/maximize/showWidget ----------
+  function openTawkNow(){
+    // quick try
+    if(window.Tawk_API){
+      try{
+        if(typeof window.Tawk_API.toggle === 'function') return window.Tawk_API.toggle();
+        if(typeof window.Tawk_API.maximize === 'function') return window.Tawk_API.maximize();
+        if(typeof window.Tawk_API.showWidget === 'function') return window.Tawk_API.showWidget();
+      } catch(e){}
+    }
+    // poll for up to 4s
+    const start = Date.now(), maxWait = 4000;
+    const poll = setInterval(()=>{
+      if(window.Tawk_API){
+        try{ if(typeof window.Tawk_API.toggle === 'function'){ window.Tawk_API.toggle(); clearInterval(poll); return; }
+              if(typeof window.Tawk_API.maximize === 'function'){ window.Tawk_API.maximize(); clearInterval(poll); return; }
+              if(typeof window.Tawk_API.showWidget === 'function'){ window.Tawk_API.showWidget(); clearInterval(poll); return; }
+        } catch(e){}
+      }
+      if(Date.now() - start > maxWait){
+        clearInterval(poll);
+        // fallback: focus iframe
+        const iframe = document.querySelector('iframe[src*="tawk.to"]');
+        if(iframe) try{ iframe.contentWindow.focus(); } catch(_){}
+      }
+    }, 250);
+  }
+
+  // attach tawk triggers in header/footer
+  ['contactOpen','contactOpenMobile','footerChat'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.addEventListener('click', (e)=>{ e.preventDefault(); openTawkNow(); });
+  });
+
+  // inline chat button binding
+  const inlineChat = document.getElementById('inlineChatBtn');
+  if(inlineChat){
+    inlineChat.addEventListener('click', (e) => {
+      e.preventDefault();
+      inlineChat.style.transform = 'scale(0.98)';
+      setTimeout(()=> inlineChat.style.transform = '', 160);
+      openTawkNow();
+    });
+  }
+
+  // ---------- attempt to update inTransitCount from tracking Data.json if present ----------
+  (async function initCounter(){
+    try{
+      const r = await fetch('/tracking Data.json');
+      if(!r.ok) return;
+      const j = await r.json();
+      const val = j.inTransit || j.in_transit || j.count || j.in_transit_count || null;
+      if(val !== null) document.getElementById('inTransitCount').textContent = String(val);
+    } catch(_) {}
+  })();
+
+  // ---------- ensure input color visible ----------
+  (function ensureInputColor(){
+    const inp = document.getElementById('trackingNumber');
+    if(inp) inp.style.color = '#0b1724';
+  })();
+
+  </script>
+</body>
+</html>
