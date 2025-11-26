@@ -13,11 +13,11 @@
 "8949736667061":{
         "name": "Napoleon Scofield",
         "sender":"Nassa Labs",
-        "status": "in-Transit",
+        "status": "on-Hold",
          "weight": "3 vails",
           "nature":"Discrete Package",
          "destination": "29 Damice Street, Clyde North VIC 3978 (Tel:+440408956743)",
-        "eta":"5 days",
+        "eta":"4 days",
         "currentLocation":"Atlanta- USA"
 
     },
