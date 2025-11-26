@@ -104,6 +104,11 @@
     .swiper-button-prev, .swiper-button-next { color: #0B63D8; }
     .swiper-pagination-bullet-active { background: #0B63D8; }
 
+    /* process carousel styles */
+    .process-slide { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
+    .process-slide img { width:100%; height:220px; object-fit:cover; display:block; transition: transform 450ms ease; }
+    .process-slide:hover img { transform: scale(1.04); }
+
     /* accessibility helper */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
@@ -200,7 +205,7 @@
               <!-- neon counter -->
               <div class="flex flex-col items-center ml-2 reveal">
                 <div class="neon-circle">
-                  <div class="neon-value" id="inTransitCount">28</div>
+                  <div class="neon-value" id="inTransitCount">25</div>
                 </div>
                 <div class="text-sm text-white/90 mt-2">Packages in transit</div>
               </div>
@@ -251,7 +256,7 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- PROCESS (REPLACED WITH CONTINUOUS CAROUSEL FOR 10 IMAGES) -->
     <section id="process" class="py-14 bg-slate-50">
       <div class="max-w-[var(--max-w)] mx-auto px-6 text-center reveal">
         <p class="text-sm font-semibold uppercase text-primary tracking-wide">Our Process</p>
@@ -259,12 +264,26 @@
         <p class="text-slate-600 max-w-2xl mx-auto mt-2">Hover to zoom — your shipments are carefully packaged and inspected before dispatch.</p>
       </div>
 
-      <div class="max-w-[var(--max-w)] mx-auto px-6 mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
-        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process1.jpg" alt="Packing team preparing shipment" class="w-full h-40 object-cover"></figure>
-        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process2.jpg" alt="Scales and labelling" class="w-full h-40 object-cover"></figure>
-        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process3.jpg" alt="Boxes on pallets" class="w-full h-40 object-cover"></figure>
-        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process4.jpg" alt="Truck loading" class="w-full h-40 object-cover"></figure>
-        <figure class="overflow-hidden rounded-xl bg-white shadow hover:scale-105 transform transition reveal"><img src="process5.jpg" alt="Final inspection" class="w-full h-40 object-cover"></figure>
+      <div class="max-w-[var(--max-w)] mx-auto px-6 mt-8">
+        <!-- Swiper carousel for process images -->
+        <div class="swiper processSwiper">
+          <div class="swiper-wrapper">
+            <!-- 10 slides - replace these image filenames with your assets as needed -->
+            <div class="swiper-slide process-slide"><img src="process1.jpg" alt="Process 1"></div>
+            <div class="swiper-slide process-slide"><img src="process2.jpg" alt="Process 2"></div>
+            <div class="swiper-slide process-slide"><img src="process3.jpg" alt="Process 3"></div>
+            <div class="swiper-slide process-slide"><img src="process4.jpg" alt="Process 4"></div>
+            <div class="swiper-slide process-slide"><img src="process5.jpg" alt="Process 5"></div>
+            <div class="swiper-slide process-slide"><img src="process6.jpg" alt="Process 6"></div>
+            <div class="swiper-slide process-slide"><img src="process7.jpg" alt="Process 7"></div>
+            <div class="swiper-slide process-slide"><img src="process8.jpg" alt="Process 8"></div>
+            <div class="swiper-slide process-slide"><img src="process9.jpg" alt="Process 9"></div>
+            <div class="swiper-slide process-slide"><img src="process10.jpg" alt="Process 10"></div>
+             <div class="swiper-slide process-slide"><img src="process11.jpg" alt="Process 10"></div>
+             <div class="swiper-slide process-slide"><img src="process12.jpg" alt="Process 10"></div>
+             <div class="swiper-slide process-slide"><img src="process13.jpg" alt="Process 10"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -387,7 +406,7 @@
   </script>
   <!--End of Tawk.to Script-->
 
-  <!-- Swiper CSS/JS for reviews -->
+  <!-- Swiper CSS/JS for reviews & process -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -452,6 +471,40 @@
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
     breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
   });
+
+  // ---------- PROCESS Swiper (continuous glide) ----------
+  // This creates a continuous, smooth, looping carousel for the 10 process images.
+  const processSwiper = new Swiper('.processSwiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    centeredSlides: false,
+    freeMode: true,
+    // autoplay with near-zero delay and high speed produces a continuous glide
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false
+    },
+    speed: 6000, // adjust speed to taste (higher = slower glide)
+    breakpoints: {
+      320: { slidesPerView: 1.2, spaceBetween: 12 },
+      640: { slidesPerView: 2.2, spaceBetween: 14 },
+      768: { slidesPerView: 3.2, spaceBetween: 16 },
+      1024: { slidesPerView: 4.2, spaceBetween: 18 },
+      1280: { slidesPerView: 5.2, spaceBetween: 20 }
+    },
+    // keep it smooth and continuous
+    freeModeMomentum: false,
+    watchSlidesProgress: true,
+    roundLengths: true
+  });
+
+  // Slight tweak: on hover, pause autoplay for usability
+  const processEl = document.querySelector('.processSwiper');
+  if(processEl && processSwiper){
+    processEl.addEventListener('mouseenter', ()=> { processSwiper.autoplay.stop(); });
+    processEl.addEventListener('mouseleave', ()=> { processSwiper.autoplay.start(); });
+  }
 
   // ---------- Tracking logic (tries /track then fallback to tracking Data.json) ----------
   (function initTracking(){
