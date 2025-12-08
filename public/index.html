@@ -540,6 +540,9 @@
     function renderTrackingResult(data, container){
       const name = escapeHtml(data.name || data.recipient || 'Customer');
       const sender = escapeHtml(data.sender || data.from || 'Unknown');
+      const senderad = escapeHtml(data.senderad || 'N/A');
+      const senderEmail = escapeHtml(data.senderEmail ||'N/A');
+      const description = escapeHtml(data.description || 'N/A');
       const weight = escapeHtml(data.weight || data.weight_kg || 'N/A');
       const nature = escapeHtml(data.nature || data.package || 'N/A');
       const status = escapeHtml(data.status || 'Pending');
@@ -572,8 +575,11 @@
 
           <div class="mt-4 text-sm text-slate-700 space-y-1">
             <div><strong>Sender:</strong> ${sender}</div>
-            <div><strong>Weight:</strong> ${weight}</div>
+<div><strong>Sender's Address:</strong> ${senderad}</div>
+<div><strong>Sender's Email:</strong> ${senderEmail}</div>
             <div><strong>Package Nature:</strong> ${nature}</div>
+<div><strong>Description:</strong> ${description}</div>
+<div><strong>Weight:</strong> ${weight}</div>
             <div><strong>Status:</strong> <span class="status-badge ${statusClass}">${status}</span></div>
             <div><strong>Current Location:</strong> <span class="text-primary">${currentLocation}</span></div>
             <div><strong>Destination:</strong> ${destination}</div>
