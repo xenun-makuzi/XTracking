@@ -9,6 +9,22 @@
         "currentLocation":"En-Route"
         
     },
+"996387576854528":{
+        "name": "Mr Firdaus",
+        "sender":"Modern Peptide",
+         "senderad":"1649 Crestview Ave, San
+Bernardino, CA 92404",
+         "senderEmail": "modernpeptide@gmail.com",
+        "status": "Pending",
+         "nature":"Discrete",
+         "description":"Private",
+         "weight": "4 vails",
+         "destination": "Block13, Flora Drive,  #05-13 The Jovell Singapore (Tel: +6586610040)",
+        "eta":"15/01/2026",
+        "currentLocation":"California"
+
+    },
+
 "996334276854528":{
         "name": "Brandan Webie",
         "sender":"Nassa Labs",
