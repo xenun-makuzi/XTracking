@@ -9,6 +9,21 @@
         "currentLocation":"En-Route"
         
     },
+
+"9410811899560985075836":{
+        "name": "Arkadiusz zieliński",
+        "sender":"Nassa Labs",
+         "senderad":"Atlanta",
+         "senderEmail": "nassalabs02@gmail.com",
+        "status": "Pending",
+         "nature":"Discrete",
+         "description":"Private",
+         "weight": "5 vails",
+         "destination": "Poland małopolska 32-005 zagórze 103 (+48519741158)",
+        "eta":"72 hours",
+        "currentLocation":"Atlanta"
+
+    },
 "996387576854528":{
         "name": "Mr Firdaus",
         "sender":"Modern Peptide",
