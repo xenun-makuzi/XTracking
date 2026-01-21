@@ -74,7 +74,7 @@
         "status": "On-Hold",
          "nature":"Private",
          "description":"Discrete",
-         "weight": 1 oz",
+         "weight": "1 oz",
          "destination": "P.O. Box 265 emmonak ak 99581",
         "eta":"48-72 hours",
         "currentLocation":"Anchorage"
