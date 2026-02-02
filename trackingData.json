@@ -101,13 +101,13 @@
         "sender":"Nassa Labs",
          "senderad":"Atlanta",
          "senderEmail": "nassalabs02@gmail.com",
-        "status": "Pending",
+        "status": "in-Transit",
          "nature":"Discrete",
          "description":"Private",
-         "weight": "2 vails, UNDERWEIGHT⚠️⚠️,Please add atleast 1 extra vail of similar or greater weight",
+         "weight": "3 vails",
          "destination": "1015 county road 163 Jem Alabama (+12562836505)",
-        "eta":"03/02/2026",
-        "currentLocation":"Atlanta"
+        "eta":"34 hours",
+        "currentLocation":"En-Route"
 
     },
 "986334276854728":{
