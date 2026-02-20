@@ -19,24 +19,9 @@
          "nature":"Private",
          "description":"Discrete",
          "weight": "1 pound",
-         "destination": "P.O. box 62045
-Golovin Alaska, 99762",
+         "destination": "P.O. box 62045 Golovin Alaska, 99762",
         "eta":"48 to 72 hours",
         "currentLocation":"Los Angeles"
-
-    },
-
-"869864674622528":{
-        "name": "Carl Michael",
-        "sender":"Mike Andrew",
-         "senderad":"331 Boniface Pkwy D, Anchorage, AK",
-        "status": "Pending",
-         "nature":"Private",
-         "description":"Discrete",
-         "weight": "1/2 pound",
-         "destination": "PO BOX 6066. NAPASKIAK AK 99559",
-        "eta":"48-72 hours",
-        "currentLocation":"Anchorage"
 
     },
 
