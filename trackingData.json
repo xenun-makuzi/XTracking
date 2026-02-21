@@ -15,12 +15,12 @@
         "sender":"Nassa Labs",
          "senderad":"Poland",
          "senderEmail": "nassalabs02@gmail.com",
-        "status": "Pending",
+        "status": "In Transit",
          "nature":"Discrete",
          "description":"Private",
          "weight": "10 vails",
          "destination": "Austria,Vienna, vorgartenstrasse 118A/52 vienna  1020(+436769605489)",
-        "eta":"72 hours",
+        "eta":"24/02/2026",
         "currentLocation":"Poland"
 
     },
