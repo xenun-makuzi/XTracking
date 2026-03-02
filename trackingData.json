@@ -24,6 +24,20 @@
         "currentLocation":"Poland"
 
     },
+"941872418997738e6086436":{
+        "name": "Phillip Worley",
+        "sender":"Mike Brown",
+         "senderad":"145 pine St Jackson TN 38301 USA",
+         "senderEmail": "mikeenglishbulldogg@gmail.com",
+        "status": "On-Hold",
+         "nature":"Alive",
+         "description":"8 weeks Male English Bulldog",
+         "weight": "4 lb",
+         "destination": "184 Wabash Road. Mulberry TN 37359",
+        "eta":"3 hours",
+        "currentLocation":"Jackson TN"
+
+    },
 
 "94187241899730985086436":{
         "name": "Roy and Dianna guerra",
@@ -33,7 +47,7 @@
         "status": "On-Hold",
          "nature":"Alive",
          "description":"8 weeks female chihuahua",
-         "weight": "4 lb",
+         "weight": "8 lbs",
          "destination": "9701 Market st #346 Houston Texas 77029",
         "eta":"3 hours",
         "currentLocation":"Henderson Texas"
