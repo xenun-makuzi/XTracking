@@ -59,13 +59,13 @@
         "name": "David Hawk",
         "sender":"Mike",
       "senderad":"331 Boniface Pkwy D, Anchorage, AK",
-        "status": "On-Hold",
+        "status": "In Transit",
          "nature":"Private",
          "description":"Discrete",
          "weight": "3 Oz",
          "destination": "P.o Box 110 quinhagak Alaska  99655",
-        "eta":"53 hours",
-        "currentLocation":"Anchorage"
+        "eta":"23 hours",
+        "currentLocation":"Bethel"
 
     },
 
